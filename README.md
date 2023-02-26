@@ -96,6 +96,11 @@ $ pnpm update         # 升级所有依赖的版本
 
 ## 欢迎参与
 
+### TODO
+
+- UnoCSS 改造
+- Typescript 规范
+- App 打包测试
 
 ## License
 

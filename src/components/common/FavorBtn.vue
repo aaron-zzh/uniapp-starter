@@ -43,5 +43,6 @@ const toggleFavor = async () => {
   width: 36px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 </style>
