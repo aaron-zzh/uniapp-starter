@@ -1,0 +1,151 @@
+{
+  "pages": [
+    // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabbar/home/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "enablePullDownRefresh": true, // 开启下拉刷新
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabbar/post/index",
+      "style": {
+        "navigationBarTitleText": "动态",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabbar/me/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/login/weappLogin",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/post/list",
+      "style": {
+        "navigationBarTitleText": "动态列表"
+      }
+    },
+    {
+      "path": "pages/web/index",
+      "style": {
+        "navigationBarTitleText": "详情"
+      }
+    },
+    {
+      "path": "pages/post/detail",
+      "style": {
+        "navigationBarTitleText": "动态详情",
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+
+  "subPackages": [
+    {
+      "root": "pages/me",
+      "pages": [
+        {
+          "path": "message",
+          "style": {
+            "navigationBarTitleText": "我的消息",
+            "enablePullDownRefresh": true // 开启下拉刷新
+          }
+        },
+        {
+          "path": "about",
+          "style": {
+            "navigationBarTitleText": "关于我们",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "agreement",
+          "style": {
+            "navigationBarTitleText": "用户协议",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "privacy",
+          "style": {
+            "navigationBarTitleText": "隐私政策",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "sample",
+          "style": {
+            "navigationBarTitleText": "空页面",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/demo",
+      "pages": [
+        {
+          "path": "/index",
+          "style": {
+            "navigationBarTitleText": "示例"
+          }
+        },
+        {
+          "path": "/page",
+          "style": {
+            "navigationBarTitleText": "示例"
+          }
+        }
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3c9cff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/home/index"
+      },
+      {
+        "pagePath": "pages/tabbar/post/index"
+      },
+      {
+        "pagePath": "pages/tabbar/me/index"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "应用名称",
+    "navigationBarBackgroundColor": "#FFF",
+    "backgroundColor": "#F8F8F8"
+  }
+}

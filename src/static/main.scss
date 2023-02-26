@@ -1,0 +1,67 @@
+// body {
+// 	background-color: #f1f1f1;
+// 	font-size: 15px;
+// 	color: #333333;
+//   font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
+// }
+
+// page {
+//   background-color: $uni-bg-color
+// }
+
+/* #ifdef H5 */
+.pc-hide {
+	display: none !important;
+}
+/* #endif */
+
+@media screen and (min-width: 768px) {
+  body {
+    overflow-y: scroll;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+.uni-scroll-view {
+  scrollbar-width: none;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.line-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-2 {
+	word-break: break-all;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.line-3 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.u-tabbar__content__item__button {
+ top: 5px !important;
+}
+.u-tabbar__content__item__text {
+  font-size: 12px !important;
+  bottom: 5px !important;
+}
+
