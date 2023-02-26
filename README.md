@@ -21,15 +21,16 @@
 - [ESLint](https://eslint.org/) 支持保存自动代码格式化
 - [Fastify](https://github.com/fastify/fastify) 使用 fastify 作为 mock api
 - [husky](https://typicode.github.io/husky/#/) Git 提交 hooks, 自动执行脚本
-  - [lint-staged](https://github.com/okonet/lint-staged) 提交时仅检查暂存区代码
-  - [commitlint](https://commitlint.js.org/#/) 提交规范检查
+  - [lint-staged](https://github.com/okonet/lint-staged) 提交时仅检查暂存区代码，代码检查通过才能提交
+  - [commitlint](https://commitlint.js.org/#/) 提交规范检查，Commit message 需要符合规范才能提交
 - 使用 px 作为尺寸单位, rpx 不支持动态横竖屏切换计算
 - 封装分页(userPager)、加载(useLoading) 、scrollColor 等 hooks，提高复用
 
 ## 目录结构
 
 ```
-├── .vscode          — VSCode 编辑器、代码片段、推荐扩展等.
+├── .vscode          — VSCode 编辑器、代码片段、推荐扩展等
+├── .husky           — 代码格式、提交规范自动检查
 ├── mock-api/        — 基于 Fastify 的极简 api mock
 ├── src/             — 前端源码
 │   ├── api/         — 基于 Fastify 的极简 api mock
@@ -63,7 +64,6 @@
 
 ## 快速开始
 
-
 ```bash
 $ git clone https://github.com/aaron-zzh/uniapp-starter example
 $ cd ./example
@@ -80,7 +80,6 @@ $ pnpm run mock                 # 打开一个新终端运行，启动模拟接�
 $ pnpm run build:h5               # H5 打包到 ./dist/build/h5
 ```
 
-
 ## 参考
 
 - [Vue3 开发指南](https://cn.vuejs.org/guide/introduction.html)
@@ -92,6 +91,7 @@ $ pnpm run build:h5               # H5 打包到 ./dist/build/h5
 
 ```bash
 $ npx @dcloudio/uvm   # 升级 uniapp
+$ pnpm update         # 升级所有依赖的版本
 ```
 
 ## 欢迎参与
