@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "antfu.iconify",
+        "antfu.unocss",
+        "antfu.goto-alias",
+        "csstools.postcss",
+        "dbaeumer.vscode-eslint",
+        "vue.volar",
+        "hollowtree.vue-snippets",
+        "vue.vscode-typescript-vue-plugin",
+        "uni-helper.uni-app-snippets-vscode"
+    ]
+  }

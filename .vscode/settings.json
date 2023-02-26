@@ -1,0 +1,19 @@
+{
+  "npm.packageManager": "pnpm",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "typescript", "html", "vue", "json"],
+  "eslint.probe": [
+    "javascript",
+    "typescript",
+    "html",
+    "vue",
+    "json"
+  ],
+  "cSpell.words": [
+    "commitlint"
+  ]
+}
