@@ -1,6 +1,15 @@
 {
   "name": "uniapp-starter",
   "version": "1.0.0",
+  "description": "uniapp 移动端跨平台脚手架",
+  "author": "AaronZZH",
+  "keywords": [
+    "Uniapp",
+    "TypeScript",
+    "UnoCSS",
+    "Pinia",
+    "Eslint"
+  ],
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
