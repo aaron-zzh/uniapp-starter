@@ -1,9 +1,7 @@
 # Uniapp Starter
 
 <h1 align="center">
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app.png
-" width="166" height="32" alt="Uniapp" /><br>
-  Uniapp + Vue3 跨平台移动端开发脚手架，H5、小程序、APP
+  基于 Uniapp + Vue3 + Ts 的移动端跨平台快速开发脚手架
 </h1>
 
 ## 技术选型
@@ -33,7 +31,7 @@
 ├── .husky           — 代码格式、提交规范自动检查
 ├── mock-api/        — 基于 Fastify 的极简 api mock
 ├── src/             — 前端源码
-│   ├── api/         — 基于 Fastify 的极简 api mock
+│   ├── api/         — api 接口
 │   ├── components/  — 自定义组件
 │   ├── hooks/       — 自定义 hooks
 │   ├── pages/       — uniapp 页面
@@ -113,4 +111,4 @@ Copyright © AaronZZH
 
 [学记DAO](https://github.com/tfwai/tfw-community)：一个开放知识管理社区，欢迎加入
 
-<sup>Made with ♥ by [AaronZZH](http://odooer.cn)</sup>
+<sup>Made with ♥ by [AaronZZH](http://aaronzzh.cn)</sup>
