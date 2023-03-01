@@ -99,6 +99,7 @@ $ pnpm update         # 升级所有依赖的版本
 - UnoCSS 改造
 - Typescript 规范
 - App 打包测试
+- tabbar 提取到 Layout
 
 ## License
 

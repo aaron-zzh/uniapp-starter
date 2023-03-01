@@ -48,7 +48,6 @@ class Request {
     storage.setHasLogin(false)
     storage.setAccessToken('')
     storage.setRefreshToken('')
-    storage.setUuid('')
     storage.setUserInfo({})
 
     if (!this.isNavigateTo) {
