@@ -1,19 +1,27 @@
 {
   "version": "0.2.0",
   "configurations": [
-      {
-          "type": "node",
-          "name": "Launch Fastify",
-          "request": "launch",
-          "runtimeArgs": [
-              "run",
-              "mock"
-          ],
-          "runtimeExecutable": "pnpm",
-          "skipFiles": [
-              "<node_internals>/**"
-          ],
-          "console": "integratedTerminal",
-      }
+    {
+      "name": "Start H5 dev",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5000",
+      "webRoot": "${workspaceFolder}/src",
+      "preLaunchTask": "npm: dev:h5",
+    },
+    {
+      "type": "node",
+      "name": "Launch Fastify",
+      "request": "launch",
+      "runtimeArgs": [
+        "run",
+        "mock"
+      ],
+      "runtimeExecutable": "pnpm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "console": "integratedTerminal"
+    }
   ]
 }
