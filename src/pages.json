@@ -111,13 +111,13 @@
       "root": "pages/demo",
       "pages": [
         {
-          "path": "/index",
+          "path": "index",
           "style": {
             "navigationBarTitleText": "示例"
           }
         },
         {
-          "path": "/page",
+          "path": "page",
           "style": {
             "navigationBarTitleText": "示例"
           }
