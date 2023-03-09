@@ -14,6 +14,6 @@ const chartData = ref({
 
 <template>
   <view>
-    <QiunDataCharts type="radar" :tooltip-show="false" :chart-data="chartData" :opacity="1" />
+    <QiunDataCharts canvas2d type="radar" :tooltip-show="false" :chart-data="chartData" :opacity="1" />
   </view>
 </template>
