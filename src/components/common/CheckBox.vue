@@ -1,11 +1,11 @@
 <template>
   <view class="check-box" :class="{ selected: modelValue }" @click="toggle">
-    <UIcon v-show="modelValue" icon="tick" size="28rpx" color="#fff" />
+    <FontIcon v-show="modelValue" icon="tick" size="28rpx" color="#fff" />
   </view>
 </template>
 
 <script setup lang="ts">
-import UIcon from './UIcon.vue'
+import FontIcon from './FontIcon.vue'
 const emit = defineEmits(['update:modelValue'])
 const props = defineProps({
   modelValue: {

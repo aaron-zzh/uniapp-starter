@@ -8,7 +8,7 @@
 
 - [Vue3](https://cn.vuejs.org/) Web 前端框架，组合式 API `<script setup lang="ts">`
 - [Typescript](https://www.typescriptlang.org/) 在 JavaScript 的基础上添加静态类型。
-- [Vite3](https://cn.vitejs.dev/) 前端工具链
+- [Vite4](https://cn.vitejs.dev/) 前端工具链
 - [vk-uview-ui](https://vkuviewdoc.fsq.pub/) 支持 Vue3 的 uview 组件库
 - [Pinia](https://pinia.vuejs.org/) 状态管理
 - [VueUse](https://vueuse.org/) 基于 Composition API的实用函数集合、hooks。
@@ -98,7 +98,7 @@ $ pnpm update         # 升级所有依赖的版本
 
 ### TODO
 
-- UnoCSS 改造
+- UnoCSS 改造 https://github.com/MellowCo/unocss-uniapp-demo
 - Typescript 规范
 - App 打包测试
 - tabbar 提取到 Layout

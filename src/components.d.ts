@@ -25,7 +25,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollList: typeof import('./components/common/ScrollList.vue')['default']
-    UIcon: typeof import('./components/common/UIcon.vue')['default']
+    FontIcon: typeof import('./components/common/FontIcon.vue')['default']
     WxKefu: typeof import('./components/common/WxKefu.vue')['default']
   }
 }
