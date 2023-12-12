@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@climblee/uv-ui': ^1.1.18
   '@commitlint/cli': ^17.8.1
   '@commitlint/config-conventional': ^17.8.1
   '@dcloudio/types': ^3.4.3
@@ -48,7 +49,7 @@ specifiers:
   fastify-tsconfig: ^1.0.1
   husky: ^8.0.3
   lint-staged: ^13.3.0
-  pinia: ^2.1.7
+  pinia: ^2.0.36
   prettier: ^2.8.8
   sass: ^1.69.5
   tap: ^16.3.9
@@ -61,13 +62,14 @@ specifiers:
   vite: ^4.5.1
   vite-plugin-compression: ^0.5.1
   vue: ^3.3.11
-  vue-demi: ^0.13.11
+  vue-demi: ^0.14.6
   vue-i18n: ^9.8.0
   vuepress: 2.0.0-rc.0
   vuepress-plugin-search-pro: 2.0.0-rc.4
   vuepress-theme-hope: 2.0.0-rc.4
 
 dependencies:
+  '@climblee/uv-ui': registry.npmmirror.com/@climblee/uv-ui/1.1.18
   '@dcloudio/uni-app': registry.npmmirror.com/@dcloudio/uni-app/3.0.0-3090820231124001_yce3veiq77aoiqbej5qqpgavye
   '@dcloudio/uni-app-plus': registry.npmmirror.com/@dcloudio/uni-app-plus/3.0.0-3090820231124001_7cwu333m6dvuqrmo3kqvbjx4au
   '@dcloudio/uni-components': registry.npmmirror.com/@dcloudio/uni-components/3.0.0-3090820231124001_ts-node@10.9.2+vue@3.3.11
@@ -84,10 +86,10 @@ dependencies:
   '@dcloudio/uni-quickapp-webview': registry.npmmirror.com/@dcloudio/uni-quickapp-webview/3.0.0-3090820231124001_ts-node@10.9.2+vue@3.3.11
   '@vueuse/shared': registry.npmmirror.com/@vueuse/shared/9.13.0_vue@3.3.11
   blueimp-md5: registry.npmmirror.com/blueimp-md5/2.19.0
-  pinia: registry.npmmirror.com/pinia/2.1.7_d3ttqmxz2nyutllfryeapw6sre
+  pinia: registry.npmmirror.com/pinia/2.0.36_d3ttqmxz2nyutllfryeapw6sre
   unocss: registry.npmmirror.com/unocss/0.50.8_vite@4.5.1
   vue: registry.npmmirror.com/vue/3.3.11_typescript@4.9.5
-  vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.3.11
+  vue-demi: registry.npmmirror.com/vue-demi/0.14.6_vue@3.3.11
   vue-i18n: registry.npmmirror.com/vue-i18n/9.8.0_vue@3.3.11
 
 optionalDependencies:
@@ -1661,6 +1663,12 @@ packages:
       '@babel/helper-string-parser': registry.npmmirror.com/@babel/helper-string-parser/7.23.4
       '@babel/helper-validator-identifier': registry.npmmirror.com/@babel/helper-validator-identifier/7.22.20
       to-fast-properties: registry.npmmirror.com/to-fast-properties/2.0.0
+
+  registry.npmmirror.com/@climblee/uv-ui/1.1.18:
+    resolution: {integrity: sha512-LdRxnL31KaxMJQY8UePlX62bdorOVXu/TafISTN4hvkLUnYUCcy3GjYr/vY/r4DCqL7gBevaMg10baBfuhzV4A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@climblee/uv-ui/-/uv-ui-1.1.18.tgz}
+    name: '@climblee/uv-ui'
+    version: 1.1.18
+    dev: false
 
   registry.npmmirror.com/@commitlint/cli/17.8.1:
     resolution: {integrity: sha512-ay+WbzQesE0Rv4EQKfNbSMiJJ12KdKTDzIt0tcK4k11FdsWmtwP0Kp1NWMOUswfIWo6Eb7p7Ln721Nx9FLNBjg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@commitlint/cli/-/cli-17.8.1.tgz}
@@ -5972,7 +5980,7 @@ packages:
       '@types/web-bluetooth': registry.npmmirror.com/@types/web-bluetooth/0.0.16
       '@vueuse/metadata': registry.npmmirror.com/@vueuse/metadata/9.13.0
       '@vueuse/shared': registry.npmmirror.com/@vueuse/shared/9.13.0_vue@3.3.11
-      vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.3.11
+      vue-demi: registry.npmmirror.com/vue-demi/0.14.6_vue@3.3.11
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -6006,7 +6014,7 @@ packages:
     name: '@vueuse/shared'
     version: 9.13.0
     dependencies:
-      vue-demi: registry.npmmirror.com/vue-demi/0.13.11_vue@3.3.11
+      vue-demi: registry.npmmirror.com/vue-demi/0.14.6_vue@3.3.11
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -10938,15 +10946,15 @@ packages:
     version: 2.3.0
     engines: {node: '>=0.10.0'}
 
-  registry.npmmirror.com/pinia/2.1.7_d3ttqmxz2nyutllfryeapw6sre:
-    resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia/-/pinia-2.1.7.tgz}
-    id: registry.npmmirror.com/pinia/2.1.7
+  registry.npmmirror.com/pinia/2.0.36_d3ttqmxz2nyutllfryeapw6sre:
+    resolution: {integrity: sha512-4UKApwjlmJH+VuHKgA+zQMddcCb3ezYnyewQ9NVrsDqZ/j9dMv5+rh+1r48whKNdpFkZAWVxhBp5ewYaYX9JcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia/-/pinia-2.0.36.tgz}
+    id: registry.npmmirror.com/pinia/2.0.36
     name: pinia
-    version: 2.1.7
+    version: 2.0.36
     peerDependencies:
       '@vue/composition-api': ^1.4.0
       typescript: '>=4.4.4'
-      vue: ^2.6.14 || ^3.3.0
+      vue: ^2.6.14 || ^3.2.0
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
@@ -13393,23 +13401,6 @@ packages:
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.3
     dev: true
-
-  registry.npmmirror.com/vue-demi/0.13.11_vue@3.3.11:
-    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-demi/-/vue-demi-0.13.11.tgz}
-    id: registry.npmmirror.com/vue-demi/0.13.11
-    name: vue-demi
-    version: 0.13.11
-    engines: {node: '>=12'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
-      vue: registry.npmmirror.com/vue/3.3.11_typescript@4.9.5
 
   registry.npmmirror.com/vue-demi/0.14.6_vue@3.3.11:
     resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-demi/-/vue-demi-0.14.6.tgz}
