@@ -97,6 +97,14 @@ $ pnpm update         # 升级所有依赖的版本
 
 ## 欢迎参与
 
+### 更新
+
+==2023-12-12==
+
+1. 微信H5及小程序支付
+2. 二维码生成及合成图片
+![](./qrcode.png)
+
 ### TODO
 
 - UnoCSS 改造 https://github.com/MellowCo/unocss-uniapp-demo

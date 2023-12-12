@@ -28,6 +28,7 @@ interface AuthorInfo {
   user_follow: boolean
   avatar_256: string
   certified: boolean
+  url: string
 }
 
 export interface HomeData {
