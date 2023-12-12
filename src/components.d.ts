@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     CommonImage: typeof import('./components/common/CommonImage.vue')['default']
     FavorBtn: typeof import('./components/common/FavorBtn.vue')['default']
     FollowBtn: typeof import('./components/common/FollowBtn.vue')['default']
+    FontIcon: typeof import('./components/common/FontIcon.vue')['default']
     MoreContent: typeof import('./components/common/MoreContent.vue')['default']
     NewsListItem: typeof import('./components/common/NewsListItem.vue')['default']
     PostForm: typeof import('./components/common/PostForm.vue')['default']
@@ -25,7 +26,6 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollList: typeof import('./components/common/ScrollList.vue')['default']
-    FontIcon: typeof import('./components/common/FontIcon.vue')['default']
     WxKefu: typeof import('./components/common/WxKefu.vue')['default']
   }
 }

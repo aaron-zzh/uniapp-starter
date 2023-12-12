@@ -21,6 +21,7 @@
 - [husky](https://typicode.github.io/husky/#/) Git 提交 hooks, 自动执行脚本
   - [lint-staged](https://github.com/okonet/lint-staged) 提交时仅检查暂存区代码，代码检查通过才能提交
   - [commitlint](https://commitlint.js.org/#/) 提交规范检查，Commit message 需要符合规范才能提交
+- [vuepress-theme-hope](https://theme-hope.vuejs.press/zh) vuepress 主题，生成静态文档网站
 - 使用 px 作为尺寸单位, rpx 不支持动态横竖屏切换计算
 - 封装分页(userPager)、加载(useLoading) 、scrollColor 等 hooks，提高复用
 
@@ -90,7 +91,7 @@ $ pnpm run build:h5               # H5 打包到 ./dist/build/h5
 ## 升级
 
 ```bash
-$ npx @dcloudio/uvm   # 升级 uniapp
+$ npx @dcloudio/uvm@latest   # 升级 uniapp
 $ pnpm update         # 升级所有依赖的版本
 ```
 
