@@ -114,6 +114,17 @@
       ]
     },
     {
+      "root": "pages/order",
+      "pages": [
+        {
+          "path": "pay",
+          "style": {
+            "navigationBarTitleText": "支付"
+          }
+        }
+      ]
+    },
+    {
       "root": "pages/demo",
       "pages": [
         {

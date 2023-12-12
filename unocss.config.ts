@@ -3,6 +3,7 @@ import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/tr
 import { defineConfig } from 'unocss'
 import { transformerDirectives } from 'unocss'
 import presetIcons from '@unocss/preset-icons'
+import presetChinese from 'unocss-preset-chinese'
 
 export default defineConfig({
   presets: [
@@ -10,12 +11,17 @@ export default defineConfig({
     presetWeapp({
       whRpx: true,
     }),
+    presetChinese(),
     presetIcons({}),
   ],
   shortcuts: [
     {
       'border-base': 'border border-gray-500_10',
       'flex-center': 'flex justify-center items-center',
+      'flex-between': 'flex justify-between items-center',
+      'custom-cover': 'relative flex',
+      'cover-image': 'flex-1 h-300',
+      'cover-text': 'absolute bottom-0 text-16px h-30px lh-30px bg-black bg-op-20 w-100%',
     },
   ],
   transformers: [
