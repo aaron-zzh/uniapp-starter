@@ -7,4 +7,10 @@ node_modules
 *.log
 .temp
 .cache
-
+unpackage/*
+deploy.sh
+.hbuilderx/
+yarn.lock
+package-lock.json
+*.keystore
+pnpm-lock.yaml

@@ -7,8 +7,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/vue3-recommended',
     'eslint:recommended',
+    'plugin:vue/vue3-recommended',
     '@vue/typescript/recommended',
     '@vue/prettier',
     '@vue/prettier/@typescript-eslint',
@@ -20,8 +20,8 @@ module.exports = {
   plugins: [],
   rules: {
     'no-undef': 0,
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 'warn',
     semi: 0,
   },
   globals: {

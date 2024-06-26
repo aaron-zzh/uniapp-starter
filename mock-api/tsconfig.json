@@ -1,9 +1,0 @@
-{
-  "extends": "fastify-tsconfig",
-  "module": "commonjs",
-  "compilerOptions": {
-    "outDir": "dist",
-    "sourceMap": true
-  },
-  "include": ["src/**/*.ts"]
-}

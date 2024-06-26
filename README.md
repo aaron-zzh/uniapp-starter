@@ -24,6 +24,8 @@
 - [vuepress-theme-hope](https://theme-hope.vuejs.press/zh) vuepress 主题，生成静态文档网站
 - 使用 px 作为尺寸单位, rpx 不支持动态横竖屏切换计算
 - 封装分页(userPager)、加载(useLoading) 、scrollColor 等 hooks，提高复用
+- 添加组件库：tmui、nutui、firstui 示例
+- 集成芋道商城手机端【TODO】
 
 ## 目录结构
 
@@ -95,23 +97,6 @@ $ npx @dcloudio/uvm@latest   # 升级 uniapp
 $ pnpm update         # 升级所有依赖的版本
 ```
 
-## 欢迎参与
-
-### 更新
-
-==2023-12-12==
-
-1. 微信H5及小程序支付
-2. 二维码生成及合成图片
-![](./qrcode.png)
-
-### TODO
-
-- UnoCSS 改造 https://github.com/MellowCo/unocss-uniapp-demo
-- Typescript 规范
-- App 打包测试
-- tabbar 提取到 Layout
-
 ## License
 
 Copyright © AaronZZH
@@ -121,6 +106,6 @@ Copyright © AaronZZH
 
 ## 广告
 
-[学记DAO](https://github.com/tfwai/tfw-community)：一个开放知识管理社区，欢迎加入
+[学记DAO](https://github.com/XueJi-DAO/xj-dao)：一个开放知识管理社区，欢迎加入
 
 <sup>Made with ♥ by [AaronZZH](http://aaronzzh.cn)</sup>
