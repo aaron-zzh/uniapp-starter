@@ -12,9 +12,9 @@ import storage from '@/utils/storage'
 // #ifdef H5
 import useWechat from '@/hooks/useWechat'
 // #endif
-import { useUserStore } from '@/store/user'
+import useUserStore from '@/store/user'
 import useLoading from '@/hooks/loading'
-import OrderApi from '@/api/order'
+// import OrderApi from '@/api/order'
 const { loading, setLoading } = useLoading()
 const userStore = useUserStore()
 const userInfo = computed(() => {
@@ -87,9 +87,9 @@ onLoad((options) => {
   }
 })
 
-const getAuthUrl = async () => {
-  return ''
-}
+// const getAuthUrl = async () => {
+//   return ''
+// }
 
 onReady(() => {
   console.log('onReady')

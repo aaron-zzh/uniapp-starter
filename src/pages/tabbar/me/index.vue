@@ -6,8 +6,7 @@ import type { Ref } from 'vue'
 import type { UserData } from '@/api/user/model'
 import UserApi from '@/api/user'
 import { isLogin, toLogin } from '@/utils/public'
-import { useUserStore } from '@/store/user'
-import { useTabbarStore } from '@/store/tabbar'
+import useUserStore from '@/store/user'
 
 const showWechat = ref(false)
 const wx = ref('Aaron-ZZH')
@@ -16,8 +15,6 @@ const model: Ref<UserData> = ref({
   follow_count: 0,
   order_count: 0,
 } as UserData)
-
-const { tabbar } = useTabbarStore()
 
 const userStore = useUserStore()
 const userInfo = computed(() => {
@@ -138,15 +135,15 @@ const btnStyle = reactive({
       <view class="user-info-box mb-4">
         <view class="bottom margin-top">
           <view class="flex-box justify-around">
-            <view class="u-flex-col u-row-center u-col-center" @click="to('sample')">
+            <view class="u-flex-col u-row-center u-col-center" @click="to('agreement')">
               <view class="number">{{ model.favor_count }}</view>
               <view class="color-#666 text-12px">收藏</view>
             </view>
-            <view class="u-flex-col u-row-center u-col-center" @click="to('sample')">
+            <view class="u-flex-col u-row-center u-col-center" @click="to('agreement')">
               <view class="number">{{ model.follow_count }}</view>
               <view class="color-#666 text-12px">关注</view>
             </view>
-            <view class="u-flex-col u-row-center u-col-center" @click="to('order')">
+            <view class="u-flex-col u-row-center u-col-center" @click="to('agreement')">
               <view class="number">{{ model.order_count }}</view>
               <view class="color-#666 text-12px">预约</view>
             </view>
@@ -176,7 +173,6 @@ const btnStyle = reactive({
           <u-cell-item icon="star-fill" title="我的收藏"></u-cell-item>
           <u-cell-item icon="shopping-cart-fill" title="我的预约"></u-cell-item>
           <u-cell-item icon="bell-fill" title="我的消息" @click="to('message')"></u-cell-item>
-          <u-cell-item icon="eye-fill" title="浏览记录"></u-cell-item>
         </u-cell-group>
       </view>
       <view class="action-box">
@@ -196,7 +192,6 @@ const btnStyle = reactive({
           </u-cell-item>
         </u-cell-group>
       </view>
-      <u-tabbar :list="tabbar" icon-size="24px" :mid-button="true"></u-tabbar>
     </view>
     <u-modal
       v-model="logoutDlgShow"

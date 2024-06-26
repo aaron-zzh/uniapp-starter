@@ -48,10 +48,10 @@ const danmuList = ref([
   },
 ])
 const videoErrorCallback = (e) => {
-  uni.showModal({
-    content: e.target.errMsg,
-    showCancel: false,
-  })
+  // uni.showModal({
+  //   content: e.target.errMsg,
+  //   showCancel: false,
+  // })
 }
 const getRandomColor = () => {
   const rgb = []
@@ -80,9 +80,10 @@ onLoad((options) => {
   model.value.id = options.id
 })
 onMounted(() => {
-  loadData()
+  // loadData()
 })
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const loadData = async () => {
   if (model.value.id) {
     auiLoadingRef.value.show()
@@ -269,8 +270,11 @@ const reloadComment = () => {
                     </u-cell-item>
                   </u-cell-group>
                 </view>
-                <view class="my-4">
+                <!-- <view class="my-4">
                   <u-parse html="<h2 style='color:red'>富文本</h2>" :domain="config.domain"></u-parse>
+                </view> -->
+                <view class="my-4 text-15px">
+                  <mp-html content="<h2 style='color:red'>富文本</h2>" :domain="config.domain" />
                 </view>
                 <view v-if="model.child_ids && model.child_ids.length > 0" class="mx--4">
                   <CommentDetail v-model:show="showDlg" :comments="model.child_ids" @submitted="reloadComment" />
@@ -418,7 +422,9 @@ const reloadComment = () => {
     }
 
     .page-box {
+      //#ifndef H5
       padding: 0 16px;
+      //#endif
       margin-bottom: 30px;
     }
   }

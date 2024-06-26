@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useUserStore } from '@/store/user'
+import useUserStore from '@/store/user'
 import useLoading from '@/hooks/loading'
 import UserApi from '@/api/user'
 import { whetherNavigate } from '@/utils/public'
@@ -30,6 +30,7 @@ const loginType = ref('wxCode')
 const isRegistered = ref(false)
 const isWaitCode = ref(false)
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const onChangeType = () => {
   loginType.value = loginType.value === 'smsCode' ? 'wxCode' : 'smsCode'
 }
@@ -232,7 +233,7 @@ const openType = computed(() => {
             <u-checkbox v-model="loginForm.agree" :size="28" :label-size="26"> 我已阅读并同意 </u-checkbox>
             <text class="color-#0070f9" @click="toPage('agreement')">《用户协议》</text>
             和
-            <text class="color-#0070f9" @click="toPage('privacy')">《隐私政策》</text>
+            <text class="color-#0070f9" @click="toPage('agreement')">《隐私政策》</text>
           </u-checkbox-group>
         </view>
         <view class="login-action">

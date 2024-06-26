@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
+// import type { Ref } from 'vue'
 const btnStyle = {
   fontSize: '14px',
   lineHeight: '22px',

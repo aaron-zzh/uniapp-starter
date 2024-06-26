@@ -11,10 +11,11 @@ import uniAsync from '@/utils/uniAsync'
 
 import { TransitionPresets } from '@vueuse/core'
 import md5 from 'blueimp-md5'
+
 const config = inject('config') // 注入
 
 const i18n = inject('i18n') // 注入
-console.log(i18n.greetings.hello, '111', config.oss, import.meta.env.MODE, process.env.NODE_ENV)
+console.log(i18n.greetings.hello, '111', config.apiPath, import.meta.env.MODE, process.env.NODE_ENV)
 
 // 访问插件全局函数
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -28,6 +29,7 @@ const auiLoadingRef = ref(null)
 // vueuse 示例
 const { x, y } = useMouse()
 const { count, inc, dec } = useCounter()
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { counter, pause, resume } = useInterval(500, { controls: true })
 const formatter = ref('YYYY-MM-DD HH:mm:ss')
 const formatted = useDateFormat(useNow(), formatter)

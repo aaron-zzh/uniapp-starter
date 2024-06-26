@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import { useTabbarStore } from '@/store/tabbar'
 import usePager from '@/hooks/pager'
 import type { HomeData, SearchParams } from '@/api/common/model'
 import type { PostList } from '@/api/post/model'
 
 const config = inject('config') // 注入
-
-const { tabbar } = useTabbarStore()
 
 const { list, pager, loadData, loadMore } = usePager<PostList>('demo')
 
@@ -104,6 +101,11 @@ onPullDownRefresh(() => {
   pager.offset = 0
   loadData(params)
 })
+onShareAppMessage(() => {
+  return {
+    title: '页面标题',
+  }
+})
 
 const tabs = [
   {
@@ -132,9 +134,20 @@ const onCityChange = (result: any) => {
   model.city = [result.province.name, result.city.name, result.area.name]
 }
 
-const toDemoPage = () => {
-  uni.$u.route('pages/demo/index')
+const toDemoPage = (page = '') => {
+  if (!page) {
+    uni.$u.route('pages/demo/index')
+  } else {
+    uni.$u.route(`pages/demo/${page}`)
+  }
 }
+const toDemoPage1 = () => {
+  uni.$u.route('pages/demo/page')
+}
+const toDemoPage2 = () => {
+  uni.$u.route('pages/demo/tmui')
+}
+
 const toPostList = () => {
   uni.$u.route('pages/post/list')
 }
@@ -172,7 +185,7 @@ export default { name: 'HomePage' }
           <u-swiper :list="bannerList" height="200"></u-swiper>
         </view>
         <view class="my-3">
-          <u-notice-bar mode="vertical" :list="events" :more-icon="true"></u-notice-bar>
+          <u-notice-bar mode="vertical" :list="events" :more-icon="true" @click="toDemoPage2"></u-notice-bar>
         </view>
         <u-grid :col="4" :border="false">
           <u-grid-item v-for="(item, index) in gridList" :key="index">
@@ -188,17 +201,30 @@ export default { name: 'HomePage' }
           </u-grid-item>
         </u-grid>
         <view class="main-btn-box flex-box mb-1 mt-3">
-          <view class="main-btn mr-2" @click="toPostList">
+          <view class="main-btn mr-2" @click="toDemoPage1">
             <view class="i-iconoir-www text-20px"></view>
             <view class="ml-1">页面</view>
           </view>
-          <view class="main-btn" @click="toDemoPage">
+          <view class="main-btn" @click="toDemoPage()">
             <view class="i-iconoir-xray-view text-20px"></view>
             <view class="ml-1">组件</view>
           </view>
         </view>
+        <view class="main-btn-box flex-box mb-1 mt-3">
+          <view class="main-btn mr-2" @click="toDemoPage('firstui')">
+            <view class="i-iconoir-www text-20px"></view>
+            <view class="ml-1">firstui</view>
+          </view>
+          <view class="main-btn" @click="toDemoPage('tmui')">
+            <view class="i-iconoir-xray-view text-20px"></view>
+            <view class="ml-1">tmui</view>
+          </view>
+          <view class="main-btn" @click="toDemoPage('nutui')">
+            <view class="i-iconoir-xray-view text-20px"></view>
+            <view class="ml-1">nutui</view>
+          </view>
+        </view>
         <view class="news-box">
-          <uni-section title="热门新闻" @click="toPostList"></uni-section>
           <view class="">
             <u-tabs v-model="current" :list="tabs" :is-scroll="false" active-color="#3c9cff" @change="change"></u-tabs>
           </view>
@@ -214,7 +240,6 @@ export default { name: 'HomePage' }
         <u-empty icon-size="360" :src="config.emptyImg"></u-empty>
       </view>
     </view>
-    <u-tabbar :list="tabbar" icon-size="24px" :mid-button="true"></u-tabbar>
     <view>
       <CitySelect
         v-model="model.showCitySelect"

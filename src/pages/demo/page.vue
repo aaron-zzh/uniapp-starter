@@ -72,6 +72,7 @@ const drawText = (ctx, text: string, color: string, x: number, y: number) => {
 }
 
 // 绘制图图像
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const drawWebImage = (canvas, ctx, imageUrl: string, x: number, y: number, width: number, height: number) => {
   return new Promise((resolve, reject) => {
     wx.getImageInfo({
@@ -189,6 +190,7 @@ const onClick = () => {
   // #endif
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const preview = async () => {
   qrcodeRef.value.canvasToTempFilePath({
     success(res) {

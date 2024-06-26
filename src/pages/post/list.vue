@@ -46,11 +46,11 @@ const params = computed(() => {
 })
 
 onMounted(() => {
-  loadData(params)
+  // loadData(params)
 })
 
 onReachBottom(() => {
-  loadMore()
+  // loadMore()
 })
 
 // 筛选

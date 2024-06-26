@@ -2,7 +2,7 @@
 export default { name: 'LoginPage' }
 </script>
 <script setup lang="ts">
-import { useUserStore } from '@/store/user'
+import useUserStore from '@/store/user'
 import useLoading from '@/hooks/loading'
 import UserApi from '@/api/user'
 import { isWeiXin, whetherNavigate, isLogin } from '@/utils/public'
@@ -30,7 +30,7 @@ const back = () => {
   //#endif
 }
 
-const code = ref('')
+// const code = ref('')
 const showBack = ref(false)
 const isWxH5 = ref(false)
 const codeRef = ref()
@@ -38,9 +38,9 @@ const tips = ref('')
 const loginType = ref('passwd')
 const isWaitCode = ref(false)
 
-const onChangeType = () => {
-  loginType.value = loginType.value === 'passwd' ? 'smsCode' : 'passwd'
-}
+// const onChangeType = () => {
+//   loginType.value = loginType.value === 'passwd' ? 'smsCode' : 'passwd'
+// }
 
 // 验证码登录
 const codeChange = (text: string) => {
@@ -157,6 +157,7 @@ onMounted(() => {
   isWxH5.value = isWeiXin()
 })
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const openType = computed(() => {
   if (!isLogin()) return null
   return 'getPhoneNumber'
@@ -207,7 +208,7 @@ const customStyle = computed(() => {
             <u-checkbox v-model="loginForm.agree" :size="28" :label-size="26"> 我已阅读并同意 </u-checkbox>
             <text class="color-#0070f9" @click="toPage('agreement')">《用户协议》</text>
             和
-            <text class="color-#0070f9" @click="toPage('privacy')">《隐私政策》</text>
+            <text class="color-#0070f9" @click="toPage('agreement')">《隐私政策》</text>
           </u-checkbox-group>
         </view>
         <view class="login-action">

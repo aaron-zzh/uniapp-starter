@@ -5,7 +5,7 @@ export default { name: 'MessagePage' }
 import { storeToRefs } from 'pinia'
 import type { Message } from '@/api/user/model'
 import type { SearchParams } from '@/api/common/model'
-import { useUserStore } from '@/store/user'
+import useUserStore from '@/store/user'
 import usePager from '@/hooks/pager'
 const config = inject('config') // 注入
 const emptyImg = '/static/images/common/avatar.jpg'

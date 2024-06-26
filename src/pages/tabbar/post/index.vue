@@ -4,11 +4,9 @@ export default { name: 'PostPage' }
 <script setup lang="ts">
 import type { SearchParams } from '@/api/common/model'
 import type { PostList } from '@/api/post/model'
-import { useTabbarStore } from '@/store/tabbar'
 import usePager from '@/hooks/pager'
 import useTabsSwiper from '@/hooks/tabsSwiper'
 
-const { tabbar } = useTabbarStore()
 const { tabsRef, tabCurrent, swiperCurrent, tabsChange, transition, animationfinish } = useTabsSwiper()
 
 const { list, pager, loadData, loadMore } = usePager<PostList>('demo')
@@ -97,9 +95,6 @@ const onChange = (index: number) => {
           </scroll-view>
         </swiper-item>
       </swiper>
-    </view>
-    <view class="fixed">
-      <u-tabbar :list="tabbar" icon-size="24px" :mid-button="true"></u-tabbar>
     </view>
   </view>
 </template>

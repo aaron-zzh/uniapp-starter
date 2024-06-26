@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import type { Comment } from '@/api/post/model'
-import { isLogin } from '@/utils/public'
+// import { isLogin } from '@/utils/public'
 import PostApi from '@/api/post'
 import useLoading from '@/hooks/loading'
 const { loading, setLoading } = useLoading()
