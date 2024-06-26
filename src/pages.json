@@ -2,13 +2,14 @@
   "easycom": {
     "autoscan": true,
     "custom": {
-      "^uv-(.*)": "@climblee/uv-ui/components/uv-$1/uv-$1.vue"
+      "fui-(.*)": "@/firstui/fui-$1/fui-$1.vue"
     }
   },
   "pages": [
-    // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    // pages 数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/index/index",
+      "aliasPath": "/",
       "style": {
         "navigationBarTitleText": "",
         "navigationStyle": "custom"
@@ -18,8 +19,15 @@
       "path": "pages/tabbar/home/index",
       "style": {
         "navigationBarTitleText": "首页",
+        "titlePenetrate": "YES",
         "enablePullDownRefresh": true, // 开启下拉刷新
         "navigationStyle": "custom"
+      },
+      "meta": {
+        "auth": false,
+        "sync": true,
+        "title": "首页",
+        "group": "首页"
       }
     },
     {
@@ -96,20 +104,6 @@
             "navigationBarTitleText": "用户协议",
             "enablePullDownRefresh": false
           }
-        },
-        {
-          "path": "privacy",
-          "style": {
-            "navigationBarTitleText": "隐私政策",
-            "enablePullDownRefresh": false
-          }
-        },
-        {
-          "path": "sample",
-          "style": {
-            "navigationBarTitleText": "空页面",
-            "enablePullDownRefresh": false
-          }
         }
       ]
     },
@@ -121,9 +115,192 @@
           "style": {
             "navigationBarTitleText": "支付"
           }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "订单详情"
+          },
+          "meta": {
+            "auth": true,
+            "title": "订单详情"
+          }
+        },
+        {
+          "path": "confirm",
+          "style": {
+            "navigationBarTitleText": "确认订单"
+          },
+          "meta": {
+            "auth": true,
+            "title": "确认订单"
+          }
+        },
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": "我的订单",
+            "enablePullDownRefresh": true
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "用户订单",
+            "group": "订单中心"
+          }
+        },
+        {
+          "path": "aftersale/apply",
+          "style": {
+            "navigationBarTitleText": "申请售后"
+          },
+          "meta": {
+            "auth": true,
+            "title": "申请售后"
+          }
+        },
+        {
+          "path": "aftersale/return-delivery",
+          "style": {
+            "navigationBarTitleText": "退货物流"
+          },
+          "meta": {
+            "auth": true,
+            "title": "退货物流"
+          }
+        },
+        {
+          "path": "aftersale/list",
+          "style": {
+            "navigationBarTitleText": "售后列表"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "售后订单",
+            "group": "订单中心"
+          }
+        },
+        {
+          "path": "aftersale/detail",
+          "style": {
+            "navigationBarTitleText": "售后详情"
+          },
+          "meta": {
+            "auth": true,
+            "title": "售后详情"
+          }
+        },
+        {
+          "path": "aftersale/log",
+          "style": {
+            "navigationBarTitleText": "售后进度"
+          },
+          "meta": {
+            "auth": true,
+            "title": "售后进度"
+          }
+        },
+        {
+          "path": "express/log",
+          "style": {
+            "navigationBarTitleText": "物流轨迹"
+          },
+          "meta": {
+            "auth": true,
+            "title": "物流轨迹"
+          }
         }
       ]
     },
+    {
+      "root": "pages/user",
+      "pages": [
+        {
+          "path": "info",
+          "style": {
+            "navigationBarTitleText": "我的信息"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "用户信息",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "goods-collect",
+          "style": {
+            "navigationBarTitleText": "我的收藏"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "商品收藏",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "goods-log",
+          "style": {
+            "navigationBarTitleText": "我的足迹"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "浏览记录",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "address/list",
+          "style": {
+            "navigationBarTitleText": "收货地址"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "地址管理",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "address/edit",
+          "style": {
+            "navigationBarTitleText": "编辑地址"
+          },
+          "meta": {
+            "auth": true,
+            "title": "编辑地址"
+          }
+        },
+        {
+          "path": "wallet/money",
+          "style": {
+            "navigationBarTitleText": "我的余额"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "用户余额",
+            "group": "用户中心"
+          }
+        },
+        {
+          "path": "wallet/score",
+          "style": {
+            "navigationBarTitleText": "我的积分"
+          },
+          "meta": {
+            "auth": true,
+            "sync": true,
+            "title": "用户积分",
+            "group": "用户中心"
+          }
+        }
+      ]
+    },
+
     {
       "root": "pages/demo",
       "pages": [
@@ -138,6 +315,25 @@
           "style": {
             "navigationBarTitleText": "示例"
           }
+        },
+        {
+          "path": "tmui",
+          "style": {
+            "navigationBarTitleText": "tmui 示例",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "firstui",
+          "style": {
+            "navigationBarTitleText": "firstui 示例"
+          }
+        },
+        {
+          "path": "nutui",
+          "style": {
+            "navigationBarTitleText": "nutui 示例"
+          }
         }
       ]
     }
@@ -146,16 +342,25 @@
     "color": "#7A7E83",
     "selectedColor": "#3c9cff",
     "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#F8F8F8",
     "list": [
       {
-        "pagePath": "pages/tabbar/home/index"
+        "pagePath": "pages/tabbar/home/index",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home-1.png",
+        "text": "首页"
       },
       {
-        "pagePath": "pages/tabbar/post/index"
+        "pagePath": "pages/tabbar/post/index",
+        "iconPath": "static/images/tabbar/post.png",
+        "selectedIconPath": "static/images/tabbar/post-1.png",
+        "text": "文章"
       },
       {
-        "pagePath": "pages/tabbar/me/index"
+        "pagePath": "pages/tabbar/me/index",
+        "iconPath": "static/images/tabbar/me.png",
+        "selectedIconPath": "static/images/tabbar/me-1.png",
+        "text": "我的"
       }
     ]
   },
@@ -163,6 +368,8 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "应用名称",
     "navigationBarBackgroundColor": "#FFF",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+    "backgroundColorTop": "#F4F5F6",
+    "backgroundColorBottom": "#F4F5F6"
   }
 }

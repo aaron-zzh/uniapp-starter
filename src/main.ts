@@ -1,12 +1,14 @@
 import { createSSRApp } from 'vue'
 import uView from './uni_modules/vk-uview-ui'
+import tmui from './tmui'
 import i18nPlugin from './plugins/i18n'
 import config from './config'
 import App from './App.vue'
-import store from './store'
-import 'uno.css'
-// import VConsole from 'vconsole'
+import { setupPinia } from './store'
 
+import 'virtual:uno.css'
+
+// import VConsole from 'vconsole'
 export function createApp() {
   const app = createSSRApp(App)
   // if (process.env.NODE_ENV === 'development') {
@@ -15,7 +17,7 @@ export function createApp() {
   //   const vConsole = new VConsole()
   //   console.log('生产环境')
   // }
-
+  console.log(ROUTES)
   app.use(config)
   app.use(i18nPlugin, {
     greetings: {
@@ -25,7 +27,8 @@ export function createApp() {
   })
 
   app.use(uView)
-  app.use(store)
+  setupPinia(app)
+  app.use(tmui, { shareDisable: false } as Tmui.tmuiConfig)
   return {
     app,
   }

@@ -1,4 +1,21 @@
 {
+    "npm.packageManager": "pnpm",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": ["javascript", "typescript", "html", "vue", "json"],
+    "eslint.probe": [
+      "javascript",
+      "typescript",
+      "html",
+      "vue",
+      "json"
+    ],
+    "cSpell.words": [
+      "commitlint"
+    ],
     "i18n-ally.localesPaths": [
         "src/tmui/locale",
         "src/uni_modules/uni-table/i18n",

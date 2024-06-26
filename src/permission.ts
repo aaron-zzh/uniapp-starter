@@ -1,4 +1,4 @@
-import { isLogin } from '@/utils/public'
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const whiteList = ['pages/demo/index']
 
 function hasPermission(path: string) {

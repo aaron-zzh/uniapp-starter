@@ -22,6 +22,7 @@ module.exports = {
     'no-undef': 0,
     'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': 'warn',
+    'vue/multi-word-component-names': 0,
     semi: 0,
   },
   globals: {

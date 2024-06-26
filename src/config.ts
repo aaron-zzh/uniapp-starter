@@ -1,9 +1,17 @@
 const name = '应用名称'
 const schemeName = '应用名称' //唤醒app需要的schemeName
+const version = import.meta.env.VITE_APP_VERSION
 
+console.log(`[${name} ${version}]`)
+
+export const baseUrl = import.meta.env.VITE_API_BASE_URL
+export const apiPath = import.meta.env.VITE_API_PATH
 export const config = {
   name: name,
   domain: import.meta.env.VITE_API_BASE_URL,
+  baseUrl: import.meta.env.VITE_API_BASE_URL,
+  apiPath: import.meta.env.VITE_API_PATH,
+  staticUrl: import.meta.env.VITE_APP_STATIC_URL,
   oss: import.meta.env.VITE_APP_OSS,
   schemeLink: `${schemeName}://`, //唤起app地址
   downloadLink: '', //下载地址，下载app的地址
@@ -15,6 +23,17 @@ export const config = {
       { label: '女', value: 'f' },
       { label: '其他', value: 'o' },
     ],
+  },
+  zIndex: {
+    toast: 10090,
+    noNetwork: 10080,
+    popup: 10075, // popup包含popup，actionsheet，keyboard，picker的值
+    mask: 10070,
+    navbar: 980,
+    topTips: 975,
+    sticky: 970,
+    indexListSticky: 965,
+    popover: 960,
   },
 }
 

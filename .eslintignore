@@ -6,11 +6,12 @@
 dist
 *.html
 uni_modules/
-tmui/
+src/tmui/
 /unpackage/*
 /node_modules/**
 /uni_modules/**
 /public/*
 **/*.svg
 **/*.sh
-**/firstui/
+src/firstui/
+src/sheepui/
