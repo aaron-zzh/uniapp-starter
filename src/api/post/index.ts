@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import type { PostInfo } from './model'
 import request from '@/utils/request'
 

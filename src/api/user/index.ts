@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import type { LoginParams, LoginResult, UserInfoResult, UserData, Message } from './model'
 import request from '@/utils/request'
 
