@@ -251,7 +251,8 @@ const cfu = {
 		"extra": {
 			"line": {
 				"type": "straight",
-				"width": 2
+				"width": 2,
+        "activeType": "hollow"
 			},
 		}
 	},
@@ -278,7 +279,8 @@ const cfu = {
   	"extra": {
   		"line": {
   			"type": "curve",
-  			"width": 2
+  			"width": 2,
+        "activeType": "hollow"
   		},
   	}
   },
@@ -308,7 +310,8 @@ const cfu = {
   			"opacity": 0.2,
   			"addLine": true,
   			"width": 2,
-  			"gradient": true
+  			"gradient": true,
+        "activeType": "hollow"
   		},
   	}
   },
@@ -396,7 +399,8 @@ const cfu = {
 				"opacity": 0.2,
 				"addLine": true,
 				"width": 2,
-				"gradient": false
+				"gradient": false,
+        "activeType": "hollow"
 			},
 		}
 	},
@@ -416,7 +420,8 @@ const cfu = {
 				"gridColor": "#CCCCCC",
 				"gridCount": 3,
 				"opacity": 0.2,
-				"max": 200
+				"max": 200,
+				"labelShow": true
 			},
 		}
 	},
