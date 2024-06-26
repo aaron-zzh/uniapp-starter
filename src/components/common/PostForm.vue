@@ -25,6 +25,7 @@ const rules = reactive({
   phone: [
     {
       required: true,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       validator: (rule, value, callback) => {
         return uni.$u.test.mobile(value)
       },
@@ -43,8 +44,8 @@ const rules = reactive({
 })
 
 // ===== 动作 ======
-const curType = ref('post')
-const showPopup = (type = 'post') => {
+// const curType = ref('post')
+const showPopup = () => {
   show.value = true
 }
 

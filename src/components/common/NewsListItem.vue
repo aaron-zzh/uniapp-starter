@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { PostList } from '@/api/post/model'
+// import type { PostList } from '@/api/post/model'
 
 const config = inject('config') // 注入
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{ data: PostList }>()
 
 const toPostDetail = (id: string | number) => {

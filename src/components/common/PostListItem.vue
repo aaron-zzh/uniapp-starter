@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useFavor from '@/hooks/favor'
 import useLoading from '@/hooks/loading'
-import { isLogin } from '@/utils/public'
+// import { isLogin } from '@/utils/public'
 import type { PostList } from '@/api/post/model'
 
 import PostApi from '@/api/post'
@@ -76,7 +76,7 @@ const onConfirm = async () => {
       let data = unref(form)
       setLoading(true)
       PostApi.comment(model.value.id, data.content)
-        .then((res) => {
+        .then(() => {
           emit('comment') // 父组件刷新评论
           uni.showToast({ title: '提交成功', icon: 'none' })
           show.value = false

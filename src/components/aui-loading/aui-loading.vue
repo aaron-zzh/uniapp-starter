@@ -1,3 +1,4 @@
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <template>
   <!-- 1、常用loading加载弹窗 -->
   <view
@@ -151,7 +152,7 @@ export default {
     show() {
       // eslint-disable-next-line @typescript-eslint/no-this-alias
       var that = this
-      return new Promise(function (resolve, reject) {
+      return new Promise(function (resolve) {
         that.SHOW = true
         resolve()
       })
@@ -160,7 +161,7 @@ export default {
     hide() {
       // eslint-disable-next-line @typescript-eslint/no-this-alias
       var that = this
-      return new Promise(function (resolve, reject) {
+      return new Promise(function (resolve) {
         that.SHOW = false
         resolve()
       })

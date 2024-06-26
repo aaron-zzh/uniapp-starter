@@ -2,7 +2,34 @@
 import type { Ref } from 'vue'
 import type { SearchParams, PageInfo } from '@/api/common/model'
 import CommonApi from '@/api/common'
-import { listData } from '@/pages/post/data'
+export const listData = [
+  {
+    id: '1',
+    author_id: {
+      name: '张三',
+      expertise: '擅长业务',
+      icon: '',
+    },
+    tag_ids: [{ name: '标签' }],
+    name: '标题1',
+    content:
+      '山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？',
+    view_count: 10,
+  },
+  {
+    id: '2',
+    author_id: {
+      name: '李四',
+      expertise: '擅长业务: 心理咨询',
+      icon: '',
+    },
+    tag_ids: [{ name: '标签' }],
+    name: '标题1',
+    content:
+      '山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？',
+    view_count: 10,
+  },
+]
 
 // 注意：分页时 offset 采用的是数据行偏移量，非第几页，需根据后台接口调整
 export default function usePager<Model>(model: string) {
@@ -46,13 +73,14 @@ export default function usePager<Model>(model: string) {
     if (pager.status == 'loadmore') {
       pager.offset = list.value.length // 此处为数据行偏移量，非第几页
       // console.log(JSON.stringify(pager.params.kwargs.domain))
+      pager.params.kwargs.offset = list.value.length
       loadData(pager.params)
     }
   }
 
   // 模拟分页
   const addRandomData = () => {
-    return new Promise<any>(function (resolve, reject) {
+    return new Promise<any>(function (resolve) {
       const result: any = { total: 20, records: [] }
       setTimeout(() => {
         for (let i = 0; i < 5; i++) {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * 微信小程序支付
  * 此处针对于微信小程序开发的支付插件

@@ -11,6 +11,19 @@ export function getLocationAuthorize() {
     })
   })
 }
+export function getCameraAuthorize() {
+  return new Promise((resolve, reject) => {
+    uni.authorize({
+      scope: 'scope.camera',
+      success: () => {
+        resolve(true) // 允许授权
+      },
+      fail: () => {
+        reject() // 拒绝授权
+      },
+    })
+  })
+}
 //查看用户权限
 export function getSetting() {
   return new Promise((resolve, reject) => {

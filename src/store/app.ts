@@ -4,7 +4,7 @@ interface AppState {
   systemInfo: UniApp.GetSystemInfoResult
 }
 
-export const useAppStore = defineStore('app', {
+const useAppStore = defineStore('app', {
   state: (): AppState => ({
     systemInfo: {} as UniApp.GetSystemInfoResult,
   }),
@@ -14,6 +14,10 @@ export const useAppStore = defineStore('app', {
     },
   },
   actions: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async init(templateId = null) {
+      console.log('app init')
+    },
     setSystemInfo(info: UniApp.GetSystemInfoResult) {
       this.systemInfo = info
     },
@@ -56,3 +60,5 @@ export const useAppStore = defineStore('app', {
     },
   },
 })
+
+export default useAppStore

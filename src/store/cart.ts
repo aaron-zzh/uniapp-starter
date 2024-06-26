@@ -1,8 +1,8 @@
 // @ts-check
 import { defineStore, acceptHMRUpdate } from 'pinia'
-import { useUserStore } from './user'
+import useUserStore from './user'
 
-export const useCartStore = defineStore('cart', () => {
+const useCartStore = defineStore('cart', () => {
   const rawItems = ref([])
 
   const items = () => {
@@ -44,3 +44,5 @@ export const useCartStore = defineStore('cart', () => {
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(useCartStore, import.meta.hot))
 }
+
+export default useCartStore

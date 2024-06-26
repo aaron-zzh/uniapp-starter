@@ -1,7 +1,7 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
 // 组合式 store
-export const useTabbarStore = defineStore('tabbar', () => {
+const useTabbarStore = defineStore('tabbar', () => {
   const tabbar = [
     {
       iconPath: '/static/images/tabbar/home.png',
@@ -31,3 +31,5 @@ export const useTabbarStore = defineStore('tabbar', () => {
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(useTabbarStore, import.meta.hot))
 }
+
+export default useTabbarStore

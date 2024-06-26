@@ -15,7 +15,7 @@ interface UserState {
   partner_id: number
 }
 
-export const useUserStore = defineStore('user', {
+const useUserStore = defineStore('user', {
   state: (): UserState => ({
     id: 0,
     partner_id: 0,
@@ -93,3 +93,5 @@ export const useUserStore = defineStore('user', {
 if (import.meta.hot) {
   import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
 }
+
+export default useUserStore

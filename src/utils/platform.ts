@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**枚举EPlatform*/
 enum EPlatform {
   /**App*/
@@ -40,6 +41,9 @@ function ifDefPlatform(): EPlatform {
   //#ifdef H5
   platform = EPlatform.H5
   //#endif
+  //#ifdef MP
+  platform = EPlatform.Mp
+  //#endif
   //#ifdef MP-WEIXIN
   platform = EPlatform.MpWeixin
   //#endif
@@ -49,17 +53,14 @@ function ifDefPlatform(): EPlatform {
   //#ifdef MP-BAIDU
   platform = EPlatform.MpBaidu
   //#endif
-  //#ifdef MP-TOUTIAO
-  platform = EPlatform.MpToutiao
-  //#endif
   //#ifdef MP-QQ
   platform = EPlatform.MpQq
   //#endif
   //#ifdef MP-360
   platform = EPlatform.Mp360
   //#endif
-  //#ifdef MP
-  platform = EPlatform.Mp
+  //#ifdef MP-TOUTIAO
+  platform = EPlatform.MpToutiao
   //#endif
   //#ifdef quickapp-webview
   platform = EPlatform.QuickappWebview
@@ -75,6 +76,7 @@ function ifDefPlatform(): EPlatform {
 
 /**平台类型*/
 export const platform: EPlatform = ifDefPlatform()
+console.log('--------', platform)
 
 /**H5*/
 export const isH5 = platform === EPlatform.H5

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import dayjs from 'dayjs'
 import storage from '@/utils/storage'
 
 /**
@@ -76,8 +78,12 @@ export function toLogin() {
     url: '/pages/login/weappLogin',
   })
   // #endif
-
-  // #ifndef MP-WEIXIN
+  // #ifdef MP-TOUTIAO
+  uni.navigateTo({
+    url: '/pages/login/toutiaoLogin',
+  })
+  //  #endif
+  // #ifdef H5
   uni.navigateTo({
     url: '/pages/login/index',
   })
@@ -176,18 +182,18 @@ function backToHome() {
  * @param type  'default' || 'wx'  //返回地址会做判断默认为default
  */
 export function whetherNavigate(type = 'default') {
-  const navigation = getCurrentPages()[getCurrentPages().length - getCurrentPages().length]
   if (getCurrentPages().length > 1) {
+    const navigation = getCurrentPages()[getCurrentPages().length - 2]
     console.log(navigation.route, getCurrentPages().length)
-    if (navigation.route == 'pages/login/index') {
+    if (navigation.route == 'pages/login/index' || !navigation.route || navigation.route == undefined) {
       navigationToBack(type)
     } else {
-      if (!navigation.route || navigation.route == 'undefined') {
-        navigationToBack(type)
-      } else {
-        uni.navigateBack({
-          delta: getCurrentPages().length,
+      if (navigation.route.includes('tabbar')) {
+        uni.switchTab({
+          url: `/pages/tabbar/home/index`,
         })
+      } else {
+        uni.navigateBack()
       }
     }
   } else {
@@ -484,4 +490,306 @@ export const restoreUrl = (path: string, query: Record<string, string>) => {
     count += 1
   }
   return path
+}
+
+//  compareVersion('1.11.0', '1.9.9') // => 1 // 1 表示 1.11.0 比 1.9.9 要新
+//  compareVersion('1.11.0', '1.11.0') // => 0 // 0 表示 1.11.0 和 1.11.0 是同一个版本
+//  compareVersion('1.11.0', '1.99.0') // => -1 // -1 表示 1.11.0 比 1.99.0 要老
+function compareVersion(v1, v2) {
+  v1 = v1.split('.')
+  v2 = v2.split('.')
+  const len = Math.max(v1.length, v2.length)
+  while (v1.length < len) {
+    v1.push('0')
+  }
+  while (v2.length < len) {
+    v2.push('0')
+  }
+  for (let i = 0; i < len; i++) {
+    const num1 = parseInt(v1[i])
+    const num2 = parseInt(v2[i])
+    if (num1 > num2) {
+      return 1
+    } else if (num1 < num2) {
+      return -1
+    }
+  }
+  return 0
+}
+
+export const uploadFile = (id: number, model: string, field: string, src: string, toast = true) => {
+  // uni.showLoading({
+  // 	title: '请稍候...'
+  // })
+  return new Promise((resolve, reject) => {
+    const token = storage.getAccessToken()
+    uni.uploadFile({
+      url: import.meta.env.VITE_API_BASE_URL + '/api/v1/lxw/upload',
+      filePath: src,
+      name: 'file',
+      header: {
+        Authorization: token,
+      },
+      formData: {
+        id,
+        model,
+        field,
+      },
+      success: (res) => {
+        console.log(res)
+        const d = JSON.parse(res.data)
+        if (d.code == 200) {
+          toast && uni.showToast({ title: d.data, icon: 'none' })
+          resolve(d.data)
+        } else {
+          toast && uni.showToast({ title: d.msg, icon: 'none' })
+          reject(d.msg || '')
+        }
+      },
+      fail: (res) => {
+        console.log(res)
+        reject(res)
+      },
+    })
+  })
+}
+
+export const uploadBlobFile = (id: number, model: string, field: string, file: File, toast = true) => {
+  return new Promise((resolve, reject) => {
+    const token = storage.getAccessToken()
+    uni.uploadFile({
+      url: import.meta.env.VITE_API_BASE_URL + '/api/v1/lxw/upload',
+      file,
+      header: {
+        Authorization: token,
+      },
+      formData: {
+        id,
+        model,
+        field,
+      },
+      success: (res) => {
+        console.log(res)
+        const d = JSON.parse(res.data)
+        if (d.code == 200) {
+          toast && uni.showToast({ title: d.data, icon: 'none' })
+          resolve(d.data)
+        } else {
+          toast && uni.showToast({ title: d.msg, icon: 'none' })
+          reject(d.msg || '')
+        }
+      },
+      fail: (res) => {
+        console.log(res)
+        reject(res)
+      },
+    })
+  })
+}
+
+export const registerFace = (src: string | undefined, file: File | undefined, coordinate: string, compare: boolean) => {
+  return new Promise((resolve, reject) => {
+    const token = storage.getAccessToken()
+    uni.uploadFile({
+      url: import.meta.env.VITE_API_BASE_URL + '/api/v1/ydt/student/register_face',
+      filePath: src,
+      name: src ? 'file' : undefined,
+      file: file,
+      header: {
+        Authorization: token,
+      },
+      formData: {
+        coordinate,
+        compare: compare ? '1' : '0',
+      },
+      success: (res) => {
+        console.log(res)
+        const d = JSON.parse(res.data)
+        if (d.code == 200) {
+          resolve(d.data)
+        } else {
+          reject(d.msg || '')
+        }
+      },
+      fail: (res) => {
+        reject(res)
+      },
+    })
+  })
+}
+
+/**
+ * 日期格式化
+ * @params {Date || Number} date 需要格式化的时间
+ * timeFormat(new Date(),"yyyy-MM-dd hh:mm:ss");
+ */
+export const timeFormat = (time: Date | number, fmt = 'yyyy-MM-dd hh:mm:ss', targetTimezone = 8) => {
+  try {
+    if (!time) {
+      return ''
+    }
+    if (typeof time === 'string' && !isNaN(time)) time = Number(time)
+    // 其他更多是格式化有如下:
+    // yyyy-MM-dd hh:mm:ss|yyyy年MM月dd日 hh时MM分等,可自定义组合
+    let date
+    if (typeof time === 'number') {
+      if (time.toString().length == 10) time *= 1000
+      date = new Date(time)
+    } else {
+      date = time
+    }
+
+    const dif = date.getTimezoneOffset()
+    const timeDif = dif * 60 * 1000 + targetTimezone * 60 * 60 * 1000
+    const east8time = date.getTime() + timeDif
+
+    date = new Date(east8time)
+    const opt = {
+      'M+': date.getMonth() + 1, //月份
+      'd+': date.getDate(), //日
+      'h+': date.getHours(), //小时
+      'm+': date.getMinutes(), //分
+      's+': date.getSeconds(), //秒
+      'q+': Math.floor((date.getMonth() + 3) / 3), //季度
+      S: date.getMilliseconds(), //毫秒
+    }
+    if (/(y+)/.test(fmt)) {
+      fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
+    }
+    for (const k in opt) {
+      if (new RegExp('(' + k + ')').test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? opt[k] : ('00' + opt[k]).substr(('' + opt[k]).length))
+      }
+    }
+    return fmt
+  } catch (err) {
+    // 若格式错误,则原值显示
+    return time
+  }
+}
+
+const base64ToFile = (base64, fileName) => {
+  const arr = base64.split(',')
+  const mime = arr[0].match(/:(.\*?);/)[1]
+  const bstr = atob(arr[1])
+  let n = bstr.length
+  const u8arr = new Uint8Array(n)
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
+  }
+  return new File([u8arr], fileName, { type: mime })
+}
+
+/**
+ * 将一个整数转换为分数保留两位小数
+ * @param {number | string | undefined} num 整数
+ * @return {number} 分数
+ */
+export const formatToFraction = (num) => {
+  if (typeof num === 'undefined') return 0
+  const parsedNumber = typeof num === 'string' ? parseFloat(num) : num
+  return parseFloat((parsedNumber / 100).toFixed(2))
+}
+
+/**
+ * 将一个数转换为 1.00 这样
+ * 数据呈现的时候使用
+ *
+ * @param {number | string | undefined} num 整数
+ * @return {string} 分数
+ */
+export const floatToFixed2 = (num) => {
+  let str = '0.00'
+  if (typeof num === 'undefined') {
+    return str
+  }
+  const f = formatToFraction(num)
+  const decimalPart = f.toString().split('.')[1]
+  const len = decimalPart ? decimalPart.length : 0
+  switch (len) {
+    case 0:
+      str = f.toString() + '.00'
+      break
+    case 1:
+      str = f.toString() + '.0'
+      break
+    case 2:
+      str = f.toString()
+      break
+  }
+  return str
+}
+
+/**
+ * 将一个分数转换为整数
+ *
+ * @param {number | string | undefined} num 分数
+ * @return {number} 整数
+ */
+export const convertToInteger = (num) => {
+  if (typeof num === 'undefined') return 0
+  const parsedNumber = typeof num === 'string' ? parseFloat(num) : num
+  // TODO 分转元后还有小数则四舍五入
+  return Math.round(parsedNumber * 100)
+}
+
+/**
+ * 时间日期转换
+ * @param {dayjs.ConfigType} date 当前时间，new Date() 格式
+ * @param {string} format 需要转换的时间格式字符串
+ * @description format 字符串随意，如 `YYYY-mm、YYYY-mm-dd`
+ * @description format 季度："YYYY-mm-dd HH:MM:SS QQQQ"
+ * @description format 星期："YYYY-mm-dd HH:MM:SS WWW"
+ * @description format 几周："YYYY-mm-dd HH:MM:SS ZZZ"
+ * @description format 季度 + 星期 + 几周："YYYY-mm-dd HH:MM:SS WWW QQQQ ZZZ"
+ * @returns {string} 返回拼接后的时间字符串
+ */
+export function formatDate(date, format) {
+  // 日期不存在，则返回空
+  if (!date) {
+    return ''
+  }
+  // 日期存在，则进行格式化
+  if (format === undefined) {
+    format = 'YYYY-MM-DD HH:mm:ss'
+  }
+  return dayjs(date).format(format)
+}
+
+/**
+ * 构造树型结构数据
+ *
+ * @param {*} data 数据源
+ * @param {*} id id字段 默认 'id'
+ * @param {*} parentId 父节点字段 默认 'parentId'
+ * @param {*} children 孩子节点字段 默认 'children'
+ * @param {*} rootId 根Id 默认 0
+ */
+export function handleTree(data, id = 'id', parentId = 'parentId', children = 'children', rootId = 0) {
+  // 对源数据深度克隆
+  const cloneData = JSON.parse(JSON.stringify(data))
+  // 循环所有项
+  const treeData = cloneData.filter((father) => {
+    const branchArr = cloneData.filter((child) => {
+      //返回每一项的子级数组
+      return father[id] === child[parentId]
+    })
+    branchArr.length > 0 ? (father.children = branchArr) : ''
+    //返回第一层
+    return father[parentId] === rootId
+  })
+  return treeData !== '' ? treeData : data
+}
+
+/**
+ * 重置分页对象
+ *
+ * TODO 芋艿：需要处理其它页面
+ *
+ * @param pagination 分页对象
+ */
+export function resetPagination(pagination: { list: never[]; total: number; pageNo: number }) {
+  pagination.list = []
+  pagination.total = 0
+  pagination.pageNo = 1
 }

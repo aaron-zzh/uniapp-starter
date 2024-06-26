@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export default function useTabsSwiper(initValue = false) {
+export default function useTabsSwiper() {
   const tabCurrent = ref(0)
   const swiperCurrent = ref(0)
   const tabsRef = ref(null)
