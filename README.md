@@ -17,7 +17,6 @@
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 自动本地导入组件
 - [Auto import](https://github.com/antfu/unplugin-auto-import) 自动导入常用 API，无需显式 `import { computed, ref } from 'vue'`
 - [ESLint](https://eslint.org/) 支持保存自动代码格式化
-- [Fastify](https://github.com/fastify/fastify) 使用 fastify 作为 mock api
 - [husky](https://typicode.github.io/husky/#/) Git 提交 hooks, 自动执行脚本
   - [lint-staged](https://github.com/okonet/lint-staged) 提交时仅检查暂存区代码，代码检查通过才能提交
   - [commitlint](https://commitlint.js.org/#/) 提交规范检查，Commit message 需要符合规范才能提交
