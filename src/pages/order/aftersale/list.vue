@@ -63,7 +63,7 @@ import { reactive } from 'vue'
 import _ from 'lodash'
 import { formatAfterSaleStatus, formatAfterSaleStatusDescription, handleAfterSaleButtons } from '@/hooks/useGoods'
 import AfterSaleApi from '@/api/trade/afterSale'
-import { resetPagination } from '@/sheep/util'
+import { resetPagination } from '@/utils/public'
 
 const state = reactive({
   currentTab: 0,

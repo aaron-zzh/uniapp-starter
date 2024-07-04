@@ -64,12 +64,23 @@
 
 ## 快速开始
 
+准备：
+
+1. nvm
+2. 安装 nodejs
+3. 安装 pnpm `npm install -g pnpm`
+4. 设置别名:
+
+```powershell
+notepad $profile.AllUsersAllHosts
+set-alias -name pn -value pnpm
+```
+
+### 启动开发
+
 ```bash
-$ git clone https://github.com/aaron-zzh/uniapp-starter example
-$ cd ./example
-$ pnpm install                  # 安装依赖
-$ pnpm run dev:h5               # H5 开发调试
-$ pnpm run mock                 # 打开一个新终端运行，启动模拟接口
+pn install                  # 安装依赖
+pn run dev:h5               # H5 开发调试
 ```
 
 支持 VSCode F5 一键启动 H5 开发模式
@@ -79,7 +90,7 @@ $ pnpm run mock                 # 打开一个新终端运行，启动模拟接�
 打包前确认各项参数配置、环境变量
 
 ```bash
-$ pnpm run build:h5               # H5 打包到 ./dist/build/h5
+pnpm run build:h5               # H5 打包到 ./dist/build/h5
 ```
 
 ## 参考
@@ -88,6 +99,7 @@ $ pnpm run build:h5               # H5 打包到 ./dist/build/h5
 - [UnoCSS 工具](https://uno.antfu.me/)
 - [uview 组件库 v1](https://v1.uviewui.com/)
 - [uniapp 官网](https://uniapp.dcloud.net.cn/)
+- [Pinia 状态](http://pinia.cc/docs/introduction.html)
 
 ## 升级
 
@@ -95,16 +107,3 @@ $ pnpm run build:h5               # H5 打包到 ./dist/build/h5
 $ npx @dcloudio/uvm@latest   # 升级 uniapp
 $ pnpm update         # 升级所有依赖的版本
 ```
-
-## License
-
-Copyright © AaronZZH
-[LICENSE](https://github.com/aaron-zzh/uniapp-starter/blob/main/LICENSE) file.
-
----
-
-## 广告
-
-[学记DAO](https://github.com/XueJi-DAO/xj-dao)：一个开放知识管理社区，欢迎加入
-
-<sup>Made with ♥ by [AaronZZH](http://aaronzzh.cn)</sup>

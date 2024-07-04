@@ -155,7 +155,7 @@ const drawQrCode = (ctx, canvasId: string, x: number, y: number, width: number, 
 }
 // #endif
 
-const onClick = () => {
+const onClick = async () => {
   if (!bgRef.value || !qrcodeRef.value || !qrcodeRef.value.canvasId) return
   // #ifdef MP-WEIXIN
   uni.showLoading({

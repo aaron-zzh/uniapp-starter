@@ -1,21 +1,4 @@
 {
-    "npm.packageManager": "pnpm",
-    "editor.tabSize": 2,
-    "editor.formatOnSave": false,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    },
-    "eslint.validate": ["javascript", "typescript", "html", "vue", "json"],
-    "eslint.probe": [
-      "javascript",
-      "typescript",
-      "html",
-      "vue",
-      "json"
-    ],
-    "cSpell.words": [
-      "commitlint"
-    ],
     "i18n-ally.localesPaths": [
         "src/tmui/locale",
         "src/uni_modules/uni-table/i18n",
@@ -26,9 +9,8 @@
         "src/uni_modules/uni-datetime-picker/components/uni-datetime-picker/i18n",
         "src/uni_modules/uni-fav/components/uni-fav/i18n",
         "src/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n",
-        "src/uni_modules/uni-load-more/components/uni-load-more/i18n",
-        "src/uni_modules/uni-pagination/components/uni-pagination/i18n",
         "src/uni_modules/uni-popup/components/uni-popup/i18n",
+        "src/uni_modules/uni-pagination/components/uni-pagination/i18n",
         "src/uni_modules/uni-search-bar/components/uni-search-bar/i18n"
     ]
 }

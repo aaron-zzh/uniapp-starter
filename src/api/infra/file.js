@@ -1,4 +1,4 @@
-import { baseUrl, apiPath } from '@/sheep/config'
+import { baseUrl, apiPath } from '@/config'
 
 const FileApi = {
   // 上传文件

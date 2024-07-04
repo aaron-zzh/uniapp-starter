@@ -17,7 +17,7 @@ export function createApp() {
   //   const vConsole = new VConsole()
   //   console.log('生产环境')
   // }
-  console.log(ROUTES)
+  // console.log('页面路由', ROUTES)
   app.use(config)
   app.use(i18nPlugin, {
     greetings: {

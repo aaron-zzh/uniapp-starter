@@ -77,7 +77,7 @@ import { computed, reactive } from 'vue'
 import _ from 'lodash'
 import dayjs from 'dayjs'
 import PointApi from '@/api/member/point'
-import { resetPagination } from '@/sheep/util'
+import { resetPagination } from '@/utils/public'
 
 const statusBarHeight = sheep.$platform.device.statusBarHeight * 2
 const userInfo = computed(() => sheep.$store('user').userInfo)

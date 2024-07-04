@@ -86,7 +86,7 @@ import { ref, reactive, unref } from 'vue'
 import sheep from '@/sheep'
 import { onLoad } from '@dcloudio/uni-app'
 import _ from 'lodash'
-import { mobile } from '@/sheep/validate/form'
+import { mobile } from '@/utils/validate/form'
 import AreaApi from '@/api/system/area'
 import AddressApi from '@/api/member/address'
 

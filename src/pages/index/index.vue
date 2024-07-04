@@ -11,7 +11,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <view class="flex flex-col items-center justify-center" style="height: 100vh">
+  <view class="flex flex-col items-center justify-center border-base" style="height: 100vh">
     <view class="flex flex-col items-center justify-center">
       <text class="title">服务平台</text>
     </view>

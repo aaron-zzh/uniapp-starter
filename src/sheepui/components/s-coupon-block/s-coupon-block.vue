@@ -43,7 +43,7 @@ import sheep from '@/sheep'
 import CouponApi from '@/api/promotion/coupon'
 import { ref, onMounted } from 'vue'
 import { CouponTemplateValidityTypeEnum, PromotionDiscountTypeEnum } from '@/sheep/util/const'
-import { floatToFixed2, formatDate } from '@/sheep/util'
+import { floatToFixed2, formatDate } from '@/utils/public'
 
 const props = defineProps({
   data: {

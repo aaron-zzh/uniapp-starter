@@ -88,7 +88,7 @@ import { reactive } from 'vue'
 import { onLoad, onReachBottom } from '@dcloudio/uni-app'
 import _ from 'lodash'
 import FavoriteApi from '@/api/product/favorite'
-import { resetPagination } from '@/sheep/util'
+import { resetPagination } from '@/utils/public'
 
 const sys_navBar = sheep.$platform.navbar
 

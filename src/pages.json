@@ -19,7 +19,7 @@
       "path": "pages/tabbar/home/index",
       "style": {
         "navigationBarTitleText": "首页",
-        "titlePenetrate": "YES",
+        // "titlePenetrate": "YES",
         "enablePullDownRefresh": true, // 开启下拉刷新
         "navigationStyle": "custom"
       },

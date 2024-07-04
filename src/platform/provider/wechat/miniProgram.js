@@ -10,7 +10,7 @@ let subscribeEventList = []
 // 加载微信小程序
 function load() {
   checkUpdate()
-  getSubscribeTemplate()
+  // getSubscribeTemplate() TODO
 }
 
 // 微信小程序静默授权登陆

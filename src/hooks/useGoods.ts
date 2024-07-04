@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import dayjs from 'dayjs'
-import $url from '@/sheep/url'
-import { formatDate } from '@/sheep/util'
+import $url from '@/utils/url'
+import { formatDate } from '@/utils/public'
 
 /**
  * 格式化销量

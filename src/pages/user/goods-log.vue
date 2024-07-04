@@ -104,8 +104,8 @@ import sheep from '@/sheep'
 import { reactive } from 'vue'
 import { onLoad, onReachBottom } from '@dcloudio/uni-app'
 import _ from 'lodash'
-import SpuHistoryApi from '@/sheep/api/product/history'
-import { cloneDeep } from '@/sheep/helper/utils'
+import SpuHistoryApi from '@/api/product/history'
+import { cloneDeep } from '@/utils/helper/utils'
 
 const sys_navBar = sheep.$platform.navbar
 const pagination = {

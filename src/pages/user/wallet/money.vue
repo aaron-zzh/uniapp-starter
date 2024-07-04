@@ -74,7 +74,7 @@ import dayjs from 'dayjs'
 import _ from 'lodash'
 import PayWalletApi from '@/api/pay/wallet'
 import { fen2yuan } from '@/hooks/useGoods'
-import { resetPagination } from '@/sheep/util'
+import { resetPagination } from '@/utils/public'
 
 const headerBg = sheep.$url.css('/static/img/shop/user/wallet_card_bg.png')
 

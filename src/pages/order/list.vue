@@ -119,7 +119,7 @@ import sheep from '@/sheep'
 import _ from 'lodash'
 import { isEmpty } from 'lodash'
 import OrderApi from '@/api/trade/order'
-import { resetPagination } from '@/sheep/util'
+import { resetPagination } from '@/utils/public'
 
 // 数据
 const state = reactive({
